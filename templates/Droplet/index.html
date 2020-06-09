@@ -1,0 +1,23 @@
+{% extends "Droplet/stream.html" %}
+{% block body_block %}
+
+<div class="jumbotron">
+  {% if user.is_authenticated %}
+    <h2>Welcome {{ user.username }}!</h2>
+  {% else %}
+    <section class="jumbotron text-center">
+      <div class="container">
+        <h1>NM WRRI DripDrive</h1>
+        <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
+        <p>
+          <a href="{% url 'Droplet:user_login' %}" class="btn btn-primary my-2">Sign In</a>
+          <a href="{% url 'Droplet:register' %}" class="btn btn-secondary my-2">Register</a>
+        </p>
+      </div>
+    </section>
+
+    {% endif %}
+  </div>
+<!-- </div> -->
+
+{% endblock %}
